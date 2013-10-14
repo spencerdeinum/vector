@@ -3,6 +3,7 @@
 #define __VECTOR_H__
 
 #include "stdlib.h"
+#include "stdbool.h"
 
 const static size_t DEFAULT_VECTOR_SIZE = 20;
 
@@ -37,5 +38,7 @@ unsigned long vector_size(vector* v);
 unsigned long vector_capacity(vector* v);
 
 void vector_reserve(vector* v, unsigned long length);
+
+bool vector_empty(vector* v);
 
 #endif

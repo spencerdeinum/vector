@@ -95,3 +95,7 @@ void vector_reserve(vector* v, unsigned long length) {
     grow_vector_to_length(v, length);
   }
 }
+
+bool vector_empty(vector* v) {
+  return v->current_size == 0;
+}

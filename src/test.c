@@ -9,6 +9,7 @@ void test_at(void);
 void test_front_and_back(void);
 void test_vector_copy(void);
 void test_vector_reserve(void);
+void test_empty(void);
 
 int main()
 {
@@ -23,6 +24,8 @@ int main()
   //test_vector_copy();
   
   test_vector_reserve();
+
+  test_empty();
 
   return 0;
 }
@@ -133,4 +136,14 @@ void test_vector_reserve(void) {
   printf("vector capacity = %lu\n", vector_capacity(v));
 
   vector_free(v, NULL);
+}
+
+void test_empty() {
+  vector* v = create_test_vector();
+
+  printf("Is v empty? %d\n", vector_empty(v));
+
+  vector* empty = vector_new();
+
+  printf("Is empty empty? %d\n", vector_empty(empty));
 }
