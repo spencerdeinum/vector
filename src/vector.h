@@ -12,12 +12,30 @@ typedef struct vector {
   void ** container;
 } vector;
 
-struct vector* vector_new(void);
+vector* vector_new(void);
 
-void vector_free(struct vector* v, void freeFunc(void*));
+void vector_free(vector* v, void freeFunc(void*));
 
-void vector_push_back(struct vector* vector, void* element);
+vector* vector_copy(vector* v);
 
-void grow_vector(struct vector* v);
+void vector_push_back(vector* v, void* element);
+
+void realloc_container(vector* v);
+
+void grow_vector(vector* v);
+
+void grow_vector_to_length(vector* v, unsigned long length);
+
+void* vector_at(vector* v, unsigned long index);
+
+void* vector_front(vector* v);
+
+void* vector_back(vector* v);
+
+unsigned long vector_size(vector* v);
+
+unsigned long vector_capacity(vector* v);
+
+void vector_reserve(vector* v, unsigned long length);
 
 #endif
